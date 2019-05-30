@@ -12,6 +12,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.CriteriaExtensionsKt;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
@@ -41,6 +42,10 @@ public class PostRep {
 	public List<Post> findAll() {
 		return mongoTemplate.findAll(Post.class);
 		
+	}
+
+	public Post find(String idPost) {
+		return mongoTemplate.find(new Query().addCriteria(Criteria.where("_id").is(idPost)),Post.class).get(0);
 	}
 
 }

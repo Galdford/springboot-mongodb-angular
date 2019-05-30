@@ -13,6 +13,14 @@ export class PostService {
   ) { }
 
   public save(post): Observable<any>{
-    return this.http.post(this.uri + '/posts', post);      
+    return this.http.post(this.uri + '/posts', post);       
+  }
+
+  public addComment(idPost, comentario){
+    return this.http.post(this.uri + '/posts/' + idPost + '/addComment', comentario);  
+  }
+
+  public findAll(){
+    return this.http.get(this.uri + '/posts/');
   }
 }

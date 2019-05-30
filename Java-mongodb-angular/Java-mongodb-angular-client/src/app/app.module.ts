@@ -9,7 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { NuevoPostComponent } from './nuevo-post/nuevo-post.component';
 import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';
-import { HttpClient } from 'selenium-webdriver/http';
+import { ComentarioComponent } from './comentario/comentario.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { HttpClient } from 'selenium-webdriver/http';
     MenuComponent,
     NuevoPostComponent,
     PostComponent,
-    PostsComponent
+    PostsComponent,
+    ComentarioComponent
   ],
   imports: [
     BrowserModule,

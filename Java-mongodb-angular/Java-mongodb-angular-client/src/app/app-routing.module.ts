@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PostComponent } from './post/post.component';
+import { PostsComponent } from './posts/posts.component';
 import { NuevoPostComponent } from './nuevo-post/nuevo-post.component';
+import { ComentarioComponent } from './comentario/comentario.component';
 
 const routes: Routes = [
   {
-    path:'',
-    redirectTo: "/post",
-    pathMatch: "full"
+    path: "",
+    redirectTo: "posts",
+    pathMatch:"full"
   },
   {
     path:"posts",
-    component:PostComponent
+    component:PostsComponent
   },
   {
     path:"nuevo-post",
     component: NuevoPostComponent
+  },
+  {
+    path:"post/:id",
+    component: ComentarioComponent
   }
 ];
 

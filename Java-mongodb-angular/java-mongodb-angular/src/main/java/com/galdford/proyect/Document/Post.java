@@ -14,21 +14,21 @@ import org.springframework.format.annotation.DateTimeFormat;
  */
 @Document(collection = "Post")
 public class Post {
-	
+
 	@Id
 	private String id = new ObjectId().toString();
-	
+
 	private String nombre;
-	
+
 	private String texto;
-	
-	@DateTimeFormat(iso =  DateTimeFormat.ISO.DATE_TIME)
+
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private Date fecha = new Date();
-	
+
 	private List<Comentario> comentarios = new ArrayList<Comentario>();
-	
+
 	public Post() {
-		
+
 	}
 
 	public String getId() {
@@ -71,8 +71,4 @@ public class Post {
 		this.comentarios = comentarios;
 	}
 
-	
-
-	
 }
-

@@ -39,4 +39,9 @@ public class PostController {
 	public UpdateResult addComment(@PathVariable("idPost") String idPost, @RequestBody Comentario comentario) {
 		return postRep.addComment(idPost, comentario);
 	}
+
+	@GetMapping("/post/{idPost}")
+	public Post find(@PathVariable("idPost") String idPost) {
+		return postRep.find(idPost);
+	}
 }
